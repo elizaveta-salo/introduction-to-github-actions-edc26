@@ -21,11 +21,6 @@ jobs:
         container: pandoc/extra
         steps:
             - uses: actions/checkout@v4
-            - uses: actions/setup-python@v6
-            - run: |
-                python -m pip install --upgrade pip
-                python -m pip install -r requirements-dev.txt
-            
             - name: convert slides into pdf
               run: pandoc --template eisvogel exercises.md -o exercises.pdf
             
