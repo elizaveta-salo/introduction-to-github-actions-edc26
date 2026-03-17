@@ -1,5 +1,6 @@
 name: Workflow of exercise 3
 run-name: Exercise 3
+permissions: {}
 
 # Events triggering the workflow
 on:

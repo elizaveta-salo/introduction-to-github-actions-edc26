@@ -1,5 +1,6 @@
 name: Workflow of exercise 1
 run-name: if run-name is missing, it's the name of the commit
+permissions: {}
 
 # Events triggering the workflow
 on: [push]

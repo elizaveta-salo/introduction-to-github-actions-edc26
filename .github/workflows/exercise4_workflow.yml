@@ -1,5 +1,6 @@
 name: Workflow of exercise 4
 run-name: Exercise 4
+permissions: {}
 
 # Events triggering the workflow
 on:
@@ -15,6 +16,8 @@ env:
 # Group of jobs to run as part of the workflow
 jobs:
     run_tests:
+        permissions: 
+            contents: read
         runs-on: ${{ matrix.os }}
         strategy: 
             fail-fast: false
