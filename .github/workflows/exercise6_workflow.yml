@@ -1,0 +1,32 @@
+name: Workflow of exercise 6
+run-name: Exercise 6
+permissions: {}
+
+# Events triggering the workflow
+on:
+    push:
+        branches: [main]
+    pull_request:
+        branches: [main]
+    workflow_dispatch:
+
+jobs:
+    # Label of the container job
+    container-job:
+        # Containers must run in Linux based operating systems
+        runs-on: ubuntu-latest
+        permissions: 
+            contents: read
+        # Docker Hub image that `container-job` executes in
+        container: pandoc/extra
+        steps:
+            - uses: actions/checkout@v4
+            - name: convert slides into pdf
+              run: pandoc --template eisvogel exercises.md -o exercises.pdf
+            
+            - name: "Upload Artifact"
+              uses: actions/upload-artifact@v7
+              with:
+                name: exercises
+                path: exercises.pdf
+                retention-days: 5
