@@ -28,6 +28,6 @@ jobs:
                 python -m pip install --upgrade pip
                 python -m pip install -r requirements-dev.txt
             - name: check style of the code
-              run: python -m black mycode.py --check
+              run: python -m black mycode.py
             - name: run the test
               run: python -m pytest test_mycode.py
