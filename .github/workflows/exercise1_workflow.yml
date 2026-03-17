@@ -1,5 +1,5 @@
 name: Workflow of exercise 1
-run-name: First workflow # Optional
+run-name: LIZA WAS HERE
 
 # Events triggering the workflow
 on: [push]
