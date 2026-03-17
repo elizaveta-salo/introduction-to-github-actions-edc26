@@ -23,10 +23,11 @@ jobs:
 
     slow_job:
         runs-on: ubuntu-latest
+        timeout-minutes: 5
         steps:
             - run: |
-                echo "Hello, I'm macos-latest"
-                sleep 120
+                echo "Hello, I'm ubuntu-latest"
+                sleep 30
 
     waiting_job:
         runs-on: ubuntu-latest
